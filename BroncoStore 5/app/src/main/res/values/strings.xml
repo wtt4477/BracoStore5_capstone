@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BroncoStore</string>
+
+    <string name="product_list">Product List</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="name">Name</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="view">View</string>
+    <string name="action">Action</string>
+    <string name="order">Order</string>
+    <string name="price">Price</string>
+    <string name="total_price">Total Price</string>
+    <string name="remove">Remove</string>
+    <string name="clear_cart">Clear Cart</string>
+    <string name="shop">Continue Shopping</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="delete_item_message">Are you sure you want to delete this item?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+    <string name="menu_login">Login</string>
+    <string name="menu_logout">Logout</string>
+    <string name="beacon_status">Beacon Status</string>
+
+    <string name="google_wallet_unavailable">Google Wallet is unavailable</string>
+    <string name="error_code">Error code: %d</string>
+    <string name="spending_limit_exceeded">You have exceeded your spending limit</string>
+</resources>

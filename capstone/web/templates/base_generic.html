@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block title %}<title>Order Management System</title>{% endblock %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap core CSS -->
+	<link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<!-- Custom styles for this template -->    
+        <link href="https://v4-alpha.getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="inner cover">
+				{% block content %}
+				{% endblock %}
+				{% block pagination %}
+				{% if is_paginated %}
+				<div class="pagination">
+				<span class="page-links">
+					{% if page_obj.has_previous %}
+					<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+					{% endif %}
+					<span class="page-current">
+					Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+					</span>
+					{% if page_obj.has_next %}
+					<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+					{% endif %}
+				</span>
+				</div>
+				{% endif %}
+				{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<footer>
+<p class="footer"> &copy 2017 SCU Bluetooth Capstone Team </p>
+</footer>
+</html>
+
+ 

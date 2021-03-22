@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% block title %}<title>Payment Details</title>{% endblock %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body> 
+
+{% block content %}
+
+	<div class="table_container">
+		<table class="table table-striped">
+		<tr id="table_head">
+			<th>Order_ID</th>
+			<th>Pre_Tips</th>
+			<th>Tips</th>
+			<th>Total Payment</th>
+			<th>Timestamp</th>
+		</tr>
+		{% for object in object_list %}
+		<tr>
+			<td>{{ object.Order_id }}</td>
+			<td>{{ object.Pre_tips }}</td>
+			<td>{{ object.Tips }}</td>
+			<td>{{ object.Total}}</td>
+			<td>{{ object.Timestamp }}</td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+    <p></p>
+	<center>
+		<a href="/web/order/" class="btn btn-md btn-secondary">Order Details</a>
+	    &emsp;
+		<a href="/accounts/logout/" class="btn btn-md btn-secondary">Log Out</a>
+	</center>	
+	
+{% endblock %}
+
+{% block pagination %}
+	{% if is_paginated %}
+		<div class="pagination">
+			<div class="pbarcenter">
+				<span class="page-links">
+				{% if page_obj.has_previous %}
+					<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+				{% endif %}
+				<span class="page-current">
+				Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+				</span>
+				{% if page_obj.has_next %}
+					<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+				{% endif %}
+				</span>	
+				<p></p>
+				
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
+
+<footer>
+<p class="footer"> &copy 2017 SCU Bluetooth Capstone Team </p>
+</footer>
+</body>
+</html>

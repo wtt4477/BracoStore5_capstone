@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WalletActivity" >
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:text="Beacon in range. Select a card to proceed." />
+
+    <TextView
+        android:id="@+id/textViewBeaconInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvCountdown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:text="Beacon Info" />
+
+    <TextView
+        android:id="@+id/tvCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/btnSelectCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCountdown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:onClick="onSelectCardClicked"
+        android:text="Select from Android Pay" />
+
+    <Button
+        android:id="@+id/btnCloseApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dynamic_wallet_button_fragment"
+        android:layout_centerHorizontal="true"
+        android:onClick="onCloseBroncoStoreClicked"
+        android:text="Close Bronco Store" />
+
+    <Button
+        android:id="@+id/btnSetTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextTip"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="31dp"
+        android:onClick="onSetTipClicked"
+        android:text="Tip!" />
+
+    <EditText
+        android:id="@+id/editTextTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewMessage"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="41dp"
+        android:layout_toStartOf="@+id/btnSetTip"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Tip" />
+
+    <FrameLayout
+        android:id="@+id/dynamic_wallet_button_fragment"
+        android:layout_width="@dimen/buy_button_width"
+        android:layout_height="@dimen/buy_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="44dp"></FrameLayout>
+
+</RelativeLayout>
